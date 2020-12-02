@@ -1,16 +1,15 @@
+import 'package:ems_conalep/src/screens/home_screen.dart';
 import 'package:ems_conalep/src/utilities/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 class LoginPage extends StatefulWidget {
-
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
- // @override
+  // @override
 
   Widget _crearCorreo() {
     return Column(
@@ -82,14 +81,14 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-
-    Widget _crearInicio() {
+  Widget _crearInicio() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Login Button Pressed'),
+        onPressed: () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomeScreen())),
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
@@ -109,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: AnnotatedRegion<SystemUiOverlayStyle>(
@@ -126,8 +125,8 @@ class _LoginPageState extends State<LoginPage> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xff00E676), 
-                      Color(0xff00E676), 
+                      Color(0xff00E676),
+                      Color(0xff00E676),
                       Color(0xFF00C853),
                       Color(0xFF69F0AE),
                     ],
